@@ -5,14 +5,14 @@ response = HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Main page")
+    return render(request, "blog/index.html")
 
-def test_page(request):
-    return HttpResponse("Test", status=404)
+# def test_page(request):
+#     return HttpResponse("Test", status=404)
 
 def contacts(request):
-    return HttpResponse("Какая-нибудь строка с контактами")
+    return render(request, "blog/contacts.html")
 
 def about(request):
-    return HttpResponse("Какая-нибудь строка с информацией")
+    return render(request, "blog/about.html")
 

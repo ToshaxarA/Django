@@ -6,7 +6,15 @@ response = HttpResponse
 # Функциональный обработчик(view), принимает request, отдаёт responce
 # def index(request):
 #     return HttpResponse("Hello!")
+# {% include 'blog/includes/navbar.html' %} 
 
+def get_template(request):
+
+    context ={
+        "zagolovok":"Заголовок из контекста",
+        "my_list": [1,2,3,4]
+    }
+    return render(request, "examples/test_template.html", context=context)
 # def index(request):
 #     my_list = [1,2,3,4]
 #     return HttpResponse(my_list)
@@ -44,3 +52,4 @@ response = HttpResponse
 #     if request.method == "GET":
 #         print(request.get_host())
 #     return HttpResponse("Hello!", status=500)
+
